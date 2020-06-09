@@ -20,8 +20,9 @@ export class FlashcardListComponent implements OnInit {
 
   saveAll() {
     this.api.saveAllAnswersToServer().subscribe(data => {
-      console.log('save SUCCESS', data)
-      , err => {console.error('save FAILURE', err)};
+      console.log('save SUCCESS', data);
+      this.api.getCards()
+     }, err => {console.error('save FAILURE', err);
     });
   }
 }

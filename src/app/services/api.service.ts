@@ -13,19 +13,20 @@ export class ApiService {
   answers = [];
 
   constructor(private http: HttpClient) {
-    this.getCards()
-    .subscribe(data => {
-      this.cards = data;
-      console.log('cards', data);
-    }, error => {
-      this.error = error;
-      console.log('error', error);
-    });
+    this.getCards();
    }
 
 
    getCards(){
-     return this.http.get<Card[]>(`${this.BASE_URL}/cards`);
+    this.http.get<Card[]>(`${this.BASE_URL}/cards`)
+    .subscribe(data => {
+      this.cards = data;
+      console.log('cards', data);
+      this.answers = [];
+    }, error => {
+      this.error = error;
+      console.log('error', error);
+    });
    }
 
    saveAnswer(answer) {
