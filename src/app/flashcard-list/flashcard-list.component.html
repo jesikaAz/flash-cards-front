@@ -1,1 +1,5 @@
-<p>flashcard-list works!</p>
+<div>
+  <div *ngFor="let card of api.cards">
+    <app-flashcard-details [card]="card"></app-flashcard-details>
+  </div>
+</div>
