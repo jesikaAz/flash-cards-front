@@ -6,9 +6,10 @@ import { Card } from '../interfaces/card';
   providedIn: 'root'
 })
 export class ApiService {
-  BASE_URL = 'http://localhost:3000';
+  private BASE_URL = 'http://localhost:3000';
   cards = [];
   error = null;
+  answers = [];
 
   constructor(private http: HttpClient) {
     this.getCards()
@@ -24,5 +25,10 @@ export class ApiService {
 
    getCards(){
      return this.http.get<Card[]>(`${this.BASE_URL}/cards`);
+   }
+
+   saveAnswer(answer) {
+     this.answers = [...this.answers, answer];
+     console.log('this.answers', this.answers);
    }
 }
