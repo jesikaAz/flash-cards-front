@@ -7,10 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class FlashcardDetailsComponent implements OnInit {
   @Input() card;
+  showAnswer = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  flip() {
+    this.showAnswer = !this.showAnswer;
+    // console.log('showAnswer', this.showAnswer);
   }
 
 }

@@ -1,4 +1,4 @@
-<div class="flip-container">
+<div class="flip-container" [class.flip]="showAnswer" (click)="flip()">
   <div class="flipper">
     <div class="front">
       {{card.question}}
