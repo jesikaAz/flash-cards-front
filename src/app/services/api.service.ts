@@ -41,4 +41,8 @@ export class ApiService {
    saveAllAnswersToServer() {
      return this.http.post<Answer[]>(`${this.BASE_URL}/cards`, this.answers);
    }
+
+   reset() {
+     return this.http.post<{reset: true}>(`${this.BASE_URL}/cards/reset`, {reset:true});
+   }
 }

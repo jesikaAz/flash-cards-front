@@ -22,7 +22,17 @@ export class FlashcardListComponent implements OnInit {
     this.api.saveAllAnswersToServer().subscribe(data => {
       console.log('save SUCCESS', data);
       this.api.getCards()
-     }, err => {console.error('save FAILURE', err);
+     }, err => {
+       console.error('save FAILURE', err);
     });
+  }
+
+  reset() {
+    this.api.reset().subscribe(data => {
+      console.log('reset Success', data);
+      this.api.getCards();
+    } , err => {
+      console.error('reset FAILURE', err);
+    })
   }
 }
