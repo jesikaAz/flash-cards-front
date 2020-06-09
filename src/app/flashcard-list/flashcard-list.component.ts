@@ -17,4 +17,11 @@ export class FlashcardListComponent implements OnInit {
    // console.log('answer', answer);
    this.api.saveAnswer(answer);
   }
+
+  saveAll() {
+    this.api.saveAllAnswersToServer().subscribe(data => {
+      console.log('save SUCCESS', data)
+      , err => {console.error('save FAILURE', err)};
+    });
+  }
 }
