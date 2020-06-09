@@ -5,7 +5,6 @@
 
 .flip-container {
     perspective: 400px;
-    border: 2px solid orange;
     margin: 15px;
   }
 
@@ -17,8 +16,8 @@
   .flip-container,
   .front,
   .back {
-    width: 250px;
-    height: 100px;
+    width: 350px;
+    height: 150px;
   }
 
   /* flip speed goes here */
@@ -35,6 +34,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    padding: 10px;
+    color:#333;
   }
 
   /* front pane, placed above back */
@@ -42,11 +43,11 @@
     z-index: 2;
     /* for firefox 31 */
     transform: rotateY(0deg);
-    background-color: brown;
+    background-color: #dedede;
   }
 
   /* back, initially hidden pane */
   .back {
     transform: rotateY(180deg);
-    background-color: rgb(42, 110, 165);
+    background-color: rgb(166, 176, 184);
   }
