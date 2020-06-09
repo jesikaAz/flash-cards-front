@@ -31,4 +31,8 @@ export class ApiService {
      this.answers = [...this.answers, answer];
      console.log('this.answers', this.answers);
    }
+
+   get allCardsAnswered() {
+     return this.answers.length === this.cards.length;
+   }
 }
